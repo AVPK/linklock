@@ -1,0 +1,5 @@
+<resources>
+    <string name="hello_world">From the Round world,\nHello, %1$s!</string>
+    <string name="mapbox_access_token">pk.eyJ1Ijoibm9tYW5hbGk1MSIsImEiOiJja2R5aGFpeGYweXZ4MnNudzA4Y2g0Y2JvIn0.jjzyTgyJLIeHe-xvVFxPPg</string>
+
+</resources>

@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <TextView
+        android:id="@+id/time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:autofillHints="none"
+        android:background="@null"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="12:00"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp"
+        android:translationX="@dimen/_minus5sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        app:layout_constraintBottom_toTopOf="@id/login_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/time_tv">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/email_container"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_marginHorizontal="@dimen/_42sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/name_pwd_bg"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mail_ic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_14sdp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/email_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@null"
+                    android:gravity="start|center"
+                    android:hint="Name"
+                    android:imeOptions="actionDone"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="@color/email_pwd_text_color"
+                    android:textColorHint="@color/a195b3"
+                    android:textSize="@dimen/_9ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/mail_ic"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/invalidEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/email_container">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/fn_error_icon2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:lineHeight="@dimen/_13sdp"
+                    android:textColor="#DF5A5A"
+                    android:textFontWeight="400"
+                    android:textSize="@dimen/_9ssp"
+                    android:translationX="-12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/fn_error_icon2"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/password_layout"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_marginHorizontal="@dimen/_42sdp"
+                android:layout_marginVertical="@dimen/_6sdp"
+                android:background="@drawable/name_pwd_bg"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/invalidEmail">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/lock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/password_et"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:autofillHints="none"
+                    android:background="@null"
+                    android:gravity="start|center"
+                    android:hint="12/5/23"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="@color/email_pwd_text_color"
+                    android:textColorHint="@color/a195b3"
+                    android:textSize="@dimen/_9ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/passwordToggleBtn"
+                    app:layout_constraintStart_toEndOf="@id/lock"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/passwordToggleBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:contentDescription="@null"
+                    android:padding="@dimen/_8sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/password_et"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/password_et" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/class_layout"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_marginHorizontal="@dimen/_42sdp"
+                android:layout_marginVertical="@dimen/_6sdp"
+                android:background="@drawable/name_pwd_bg"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/password_layout">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/class_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/class_et"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:autofillHints="none"
+                    android:background="@null"
+                    android:gravity="start|center"
+                    android:hint="Class"
+                    android:imeOptions="actionDone"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="@color/email_pwd_text_color"
+                    android:textColorHint="@color/a195b3"
+                    android:textSize="@dimen/_9ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/classToggleBtn"
+                    app:layout_constraintStart_toEndOf="@id/class_iv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/classToggleBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:contentDescription="@null"
+                    android:padding="@dimen/_8sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/class_et"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/class_et" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/arrive_layout"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_marginHorizontal="@dimen/_42sdp"
+                android:background="@drawable/name_pwd_bg"
+                android:orientation="horizontal"
+                android:layout_marginVertical="@dimen/_6sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/class_layout">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/arrive_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/arrive_et"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:autofillHints="none"
+                    android:background="@null"
+                    android:gravity="start|center"
+                    android:hint="Arrived time"
+                    android:imeOptions="actionDone"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="@color/email_pwd_text_color"
+                    android:textColorHint="@color/a195b3"
+                    android:textSize="@dimen/_9ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/arriveToggleBtn"
+                    app:layout_constraintStart_toEndOf="@id/arrive_iv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/arriveToggleBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:contentDescription="@null"
+                    android:padding="@dimen/_8sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/arrive_et"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/arrive_et" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/login_btn"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_18sdp"
+        android:elevation="0.1dp"
+        app:cardBackgroundColor="@color/activated_clr"
+        app:cardCornerRadius="@dimen/_16sdp"
+        app:cardElevation="0.1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/_12ssp" />
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
