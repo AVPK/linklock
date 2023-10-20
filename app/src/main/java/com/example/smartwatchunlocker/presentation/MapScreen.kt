@@ -6,17 +6,13 @@ import android.location.Geocoder
 import android.location.Location
 import android.os.Bundle
 import android.util.Log
-import com.mapbox.maps.plugin.gestures.*
-import com.mapbox.maps.plugin.locationcomponent.*
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import com.example.smartwatchunlocker.R
 import com.example.smartwatchunlocker.utils.getAddress
-import com.mapbox.android.gestures.MoveGestureDetector
 import com.mapbox.geojson.Point
 import com.mapbox.maps.CameraOptions
 import com.mapbox.maps.EdgeInsets
@@ -27,11 +23,8 @@ import com.mapbox.maps.Style
 import com.mapbox.maps.plugin.LocationPuck2D
 import com.mapbox.maps.plugin.animation.MapAnimationOptions
 import com.mapbox.maps.plugin.animation.camera
-import com.mapbox.maps.plugin.gestures.OnMoveListener
-import com.mapbox.maps.plugin.locationcomponent.LocationComponentPlugin
-import com.mapbox.maps.plugin.locationcomponent.OnIndicatorBearingChangedListener
-import com.mapbox.maps.plugin.locationcomponent.OnIndicatorPositionChangedListener
-import com.mapbox.maps.plugin.locationcomponent.location
+import com.mapbox.maps.plugin.gestures.*
+import com.mapbox.maps.plugin.locationcomponent.*
 import com.mapbox.navigation.base.options.NavigationOptions
 import com.mapbox.navigation.core.MapboxNavigation
 import com.mapbox.navigation.core.lifecycle.MapboxNavigationApp
@@ -67,28 +60,6 @@ class MapScreen : AppCompatActivity() {
     private lateinit var viewportDataSource: MapboxNavigationViewportDataSource
 
 
-//    private val onIndicatorBearingChangedListener =
-//        OnIndicatorBearingChangedListener { v -> mapView?.getMapboxMap()?.setCamera(CameraOptions.Builder().bearing(v).build()) }
-//
-//    private val onIndicatorPositionChangedListener = OnIndicatorPositionChangedListener { point ->
-//        mapView?.getMapboxMap()?.setCamera(CameraOptions.Builder().center(point).zoom(20.0).build())
-//        getGestures(mapView).setFocalPoint(mapView?.getMapboxMap()?.pixelForCoordinate(point))
-//    }
-
-    private val onMoveListener: OnMoveListener = object : OnMoveListener {
-        override fun onMoveBegin(moveGestureDetector: MoveGestureDetector) {
-//            getLocationComponent(mapView).removeOnIndicatorBearingChangedListener(onIndicatorBearingChangedListener)
-//            getLocationComponent(mapView).removeOnIndicatorPositionChangedListener(onIndicatorPositionChangedListener)
-//            getGestures(mapView).removeOnMoveListener(this)
-        }
-
-        override fun onMove(moveGestureDetector: MoveGestureDetector): Boolean {
-            return false
-        }
-
-        override fun onMoveEnd(moveGestureDetector: MoveGestureDetector) {}
-    }
-
     /**
      * Gets notified with location updates.
      *
@@ -96,8 +67,6 @@ class MapScreen : AppCompatActivity() {
      * and the updates enhanced by the Navigation SDK (cleaned up and matched to the road).
      */
     private val locationObserver = object : LocationObserver {
-
-        var firstLocationUpdateReceived = false
 
         /**
          * Invoked as soon as the [Location] is available.
@@ -118,33 +87,9 @@ class MapScreen : AppCompatActivity() {
                 enhancedLocation,
                 locationMatcherResult.keyPoints,
             )
-//            // Invoke this method to move the camera to your current location.
             getCompleteAddressString(enhancedLocation.latitude, enhancedLocation.longitude)
-//            getCompleteAddressString(33.616007, 72.921299)
             updateCamera(enhancedLocation)
 
-
-//            val enhancedLocation = locationMatcherResult.enhancedLocation
-//            // update location puck's position on the map
-//            navigationLocationProvider.changePosition(
-//                location = enhancedLocation,
-//                keyPoints = locationMatcherResult.keyPoints,
-//            )
-//
-//            // update camera position to account for new location
-//            viewportDataSource.onLocationChanged(enhancedLocation)
-//            viewportDataSource.evaluate()
-
-            // if this is the first location update the activity has received,
-            // it's best to immediately move the camera to the current user location
-//            if (!firstLocationUpdateReceived) {
-//                firstLocationUpdateReceived = true
-//                navigationCamera.requestNavigationCameraToOverview(
-//                    stateTransitionOptions = NavigationCameraTransitionOptions.Builder()
-//                        .maxDuration(0) // instant transition
-//                        .build()
-//                )
-//            }
         }
 
     }

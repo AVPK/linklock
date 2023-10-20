@@ -74,11 +74,15 @@ dependencies {
     implementation("com.intuit.ssp:ssp-android:1.1.0")
 
     implementation("com.google.android.gms:play-services-location:21.0.1")
-    implementation("com.mapbox.maps:android:10.16.1")
+//    implementation("com.mapbox.maps:android:10.16.1")
     implementation("com.mapbox.navigation:android:2.10.1")
-    implementation("com.mapbox.navigation:ui-dropin:2.10.1")
-//    implementation("com.github.quickpermissions:quickpermissions-kotlin:0.4.0")
+//    implementation("com.mapbox.navigation:ui-dropin:2.10.1")
     implementation("com.karumi:dexter:6.2.3")
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.google.code.gson:gson:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
 
     androidTestImplementation(platform("androidx.compose:compose-bom:2022.10.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")

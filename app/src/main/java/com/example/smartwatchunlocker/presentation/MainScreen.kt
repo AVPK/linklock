@@ -45,6 +45,10 @@ class MainScreen : AppCompatActivity() {
             startActivity(Intent(this@MainScreen, AttendanceMarkScreen::class.java))
         }
 
+        findViewById<TextView>(R.id.show_attendance).setOnClickListener {
+            startActivity(Intent(this@MainScreen, AttendanceScreen::class.java))
+        }
+
         findViewById<CardView>(R.id.current_loc_card).setOnClickListener {
 //            methodRequiresPermissions()
             uploadMeNowImage()

@@ -9,6 +9,7 @@
     <string name="title_activity_presentation._main">presentation.MainActivity</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="complication_label">Example complication</string>
-    <string name="mapbox_access_token">pk.eyJ1Ijoibm9tYW5hbGk1MSIsImEiOiJja2R5aGFpeGYweXZ4MnNudzA4Y2g0Y2JvIn0.jjzyTgyJLIeHe-xvVFxPPg</string>
+<!--    public access token-->
+    <string name="mapbox_access_token"></string>
 
 </resources>
